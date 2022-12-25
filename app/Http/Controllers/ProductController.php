@@ -6,6 +6,7 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use PDF;
 
 class ProductController extends Controller
 {
@@ -65,5 +66,11 @@ class ProductController extends Controller
     {
         Product::deleteProduct($id);
         return redirect('/product/manage')->with('message', 'Product info delete successfully');
+    }
+
+    public function invoice($id)
+    {
+        $pdf = PDF::loadView('admin.product.invoice',['product' => Product::find($id)]);
+        return $pdf->stream('pdf_file.pdf');
     }
 }

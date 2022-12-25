@@ -42,7 +42,11 @@
                                                 <i class="fa fa-edit">Edit</i>
                                             </a>
                                             <a href="{{route('product.delete',['id' => $product->id ])}}" class="btn btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete this')">
-                                                <i class="fa fa-trash">Delete</i></a>
+                                                <i class="fa fa-trash">Delete</i>
+                                            </a>
+                                            <a href="{{route('product.invoice',['id' => $product->id ])}}" class="btn btn btn-danger btn-sm" >
+                                                <i class="fa fa-download">Invoice</i>
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach

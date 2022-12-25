@@ -36,6 +36,7 @@ Route::middleware([
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::post('/product/update/{id}',[ProductController::class,'update'])->name('product.update');
     Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+    Route::get('/product/invoice/{id}',[ProductController::class,'invoice'])->name('product.invoice');
 
     Route::get('/add/category',[CategoryController::class,'index'])->name('add-category');
     Route::post('/create/category',[CategoryController::class,'create'])->name('create-category');
